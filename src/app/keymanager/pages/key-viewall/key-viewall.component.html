@@ -1,1 +1,18 @@
-<p>key-viewall works!</p>
+
+<mat-card>
+    <mat-card-subtitle>
+        Administrador de Claves
+    </mat-card-subtitle>
+    <mat-card-content>
+        <table mat-table [dataSource]="keyarray">
+            
+            <ng-container matColumnDef={{col.key}} *ngFor="let col of columnsSchemaEstudio">
+                <th mat-header-cell *matHeaderCellDef> {{col.label}} </th>
+                <td mat-cell *matCellDef="let element"> {{element[col.key]}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsEstudio"></tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumnsEstudio;" (click)="view_detail_href(element.id)"></tr>
+        </table>
+    </mat-card-content>
+</mat-card>
