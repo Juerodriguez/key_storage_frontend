@@ -1,0 +1,9 @@
+table {
+    width: 20%;
+    margin-top: 10px;
+  }
+
+.mat-cards{
+    background-color: aliceblue;
+    margin-block: 10px;
+}

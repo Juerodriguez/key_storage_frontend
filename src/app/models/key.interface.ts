@@ -13,3 +13,8 @@ export interface SharedI{
   info_ip: string;
   key_related: string;
 }
+
+export interface KeyPostI {
+  name?: string | null;
+  password?: string | null;
+}

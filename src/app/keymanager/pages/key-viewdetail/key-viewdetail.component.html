@@ -1,1 +1,39 @@
-<p>key-viewdetail works!</p>
+
+<mat-card class="mat-cards">
+    <mat-card-header>
+        <mat-card-title>
+            Detalle de Claves
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card class="mat-cards">
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            Nombre de clave: {{keyForm.value.name}}
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            Clave encriptada: ****
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            Fecha de creacion: {{keyForm.value.created_at}}
+        </mat-card-content>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card class="mat-cards">
+        <mat-card-content>
+            <table mat-table [dataSource]="shared">
+                
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef> Emails compartidos </th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                </ng-container>
+    
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsEmail"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsEmail;"></tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+
+</mat-card>

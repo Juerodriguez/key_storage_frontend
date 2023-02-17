@@ -9,6 +9,10 @@ import { KeyViewdetailComponent } from './pages/key-viewdetail/key-viewdetail.co
 import { KeyShareviewallComponent } from './pages/key-shareviewall/key-shareviewall.component';
 import { KeySharepostComponent } from './pages/key-sharepost/key-sharepost.component';
 import { MatCardModule } from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -24,6 +28,9 @@ import { MatCardModule } from '@angular/material/card';
     KeymanagerRoutingModule,
     MatCardModule,
     MatTableModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
     ],
 })
 export class KeymanagerModule {}

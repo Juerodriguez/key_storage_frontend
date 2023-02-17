@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { KeyService } from 'src/app/service/key.service'
-import { FormBuilder, Validators, FormArray, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -17,8 +17,9 @@ export class KeyViewdetailComponent implements OnInit{
     
     
   });
-  shared_at = []
+  shared = []
   id: string | null = ""
+  displayedColumnsEmail: string[] = ['email'];
 
   constructor(private fb: FormBuilder, private keyService: KeyService, private route: ActivatedRoute) {}
 
@@ -31,9 +32,10 @@ export class KeyViewdetailComponent implements OnInit{
   show_data() {
     
     this.keyService.getKey(this.id).subscribe((response) => {
-      console.log(response)
-      
-
+      this.keyForm.controls["name"].setValue(response.name),
+      this.keyForm.controls["password"].setValue(response.password),
+      this.keyForm.controls["created_at"].setValue(response.created_at)
+      this.shared = response.shared_at
     });
   }
 
