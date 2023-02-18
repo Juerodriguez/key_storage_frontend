@@ -14,6 +14,10 @@ export interface SharedI{
   key_related: string;
 }
 
+export interface SharedPOSTI{
+  email?: string | null;
+}
+
 export interface KeyPostI {
   name?: string | null;
   password?: string | null;

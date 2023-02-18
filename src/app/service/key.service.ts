@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {KeyI, SharedI, KeyPostI} from '../models/key.interface';
+import {KeyI, SharedI, KeyPostI, SharedPOSTI } from '../models/key.interface';
 import {environment} from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -38,13 +38,13 @@ export class KeyService {
     const url = `${API_URL}${KEY_EDIT}${id}`;
     return this.http.get<KeyI>(url, httpOptions);
   }
-  deleteKey(id: number): Observable<KeyI> {
+  deleteKey(id: string | null): Observable<any> {
     const url = `${API_URL}${KEY_EDIT}${id}`;
-    return this.http.delete<KeyI>(url, httpOptions);
+    return this.http.delete(url, httpOptions);
   }
 
-  shareKey(id: number, form: SharedI): Observable<SharedI> {
+  shareKey(id: string | null, form: SharedPOSTI): Observable<any> {
     const url = `${API_URL}${KEY_SHARE}${id}`;
-    return this.http.post<SharedI>(url, form, httpOptions);
+    return this.http.post(url, form, httpOptions);
   }
 }

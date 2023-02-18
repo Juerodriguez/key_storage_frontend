@@ -58,6 +58,12 @@ export class KeyViewallComponent implements OnInit {
     this.router.navigate([`${KEY_DETAIL}${id}`]);
 
   }
+
+  view_create_href(){
+    const url = 'keymanager/create/'
+    this.router.navigate([`${url}`]);
+
+  }
     
 }
 

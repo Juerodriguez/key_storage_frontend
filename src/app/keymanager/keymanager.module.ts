@@ -11,7 +11,8 @@ import { KeySharepostComponent } from './pages/key-sharepost/key-sharepost.compo
 import { MatCardModule } from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -31,6 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDividerModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatButtonModule,
     ],
 })
 export class KeymanagerModule {}

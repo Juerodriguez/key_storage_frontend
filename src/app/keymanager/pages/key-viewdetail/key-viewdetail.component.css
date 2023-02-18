@@ -7,3 +7,8 @@ table {
     background-color: aliceblue;
     margin-block: 10px;
 }
+
+button{
+  padding: auto;
+  margin: 5px;
+}
