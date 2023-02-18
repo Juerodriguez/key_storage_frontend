@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { KeyService } from 'src/app/service/key.service'
 import { Router } from '@angular/router';
 
-const COLUMNS_SCHEMA_ESTUDIO = [
+const COLUMNS_SCHEMA_KEYS = [
   {
     key: "id",
     type: "text",
@@ -33,8 +33,8 @@ const COLUMNS_SCHEMA_ESTUDIO = [
 export class KeyViewallComponent implements OnInit {
 
   
-  displayedColumnsEstudio: string[] = COLUMNS_SCHEMA_ESTUDIO.map((col) => col.key);
-  columnsSchemaEstudio: any = COLUMNS_SCHEMA_ESTUDIO;
+  displayedColumnsEstudio: string[] = COLUMNS_SCHEMA_KEYS.map((col) => col.key);
+  columnsSchemaEstudio: any = COLUMNS_SCHEMA_KEYS;
   keyarray = []
 
   constructor(private keyService: KeyService, private router: Router,) {}

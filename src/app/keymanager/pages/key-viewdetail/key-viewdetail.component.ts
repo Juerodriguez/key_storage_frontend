@@ -3,6 +3,29 @@ import { KeyService } from 'src/app/service/key.service'
 import { FormBuilder, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
+const COLUMNS_SCHEMA_EMAILS = [
+  {
+    key: "id",
+    type: "text",
+    label: "id"
+  },
+  {
+      key: "email",
+      type: "text",
+      label: "Email compartido"
+  },
+  {
+      key: "visited",
+      type: "text",
+      label: "Fue consultada"
+  },
+  {
+    key: "info_ip",
+    type: "text",
+    label: "IP de acceso"
+  },
+]
+
 @Component({
   selector: 'app-key-viewdetail',
   templateUrl: './key-viewdetail.component.html',
@@ -20,6 +43,8 @@ export class KeyViewdetailComponent implements OnInit{
   shared = []
   id: string | null = ""
   displayedColumnsEmail: string[] = ['email'];
+  displayedColumnsEstudio: string[] = COLUMNS_SCHEMA_EMAILS.map((col) => col.key);
+  columnsSchemaEstudio: any = COLUMNS_SCHEMA_EMAILS;
 
   constructor(private fb: FormBuilder, private keyService: KeyService, private route: ActivatedRoute, private router: Router,) {}
 

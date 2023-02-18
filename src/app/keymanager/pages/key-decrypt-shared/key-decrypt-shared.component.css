@@ -1,0 +1,17 @@
+.box {
+    margin: auto;
+    position: relative;
+    top: 10px;
+    opacity: 1;
+    float: center;
+    padding: 60px 50px 40px 50px;
+    width: 40%;
+    background: aliceblue;
+    border-radius: 10px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    z-index: 5;
+    max-width: 40%;
+    min-width: 350px;
+  }

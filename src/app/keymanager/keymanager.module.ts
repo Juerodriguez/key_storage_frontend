@@ -9,10 +9,14 @@ import { KeyViewdetailComponent } from './pages/key-viewdetail/key-viewdetail.co
 import { KeyShareviewallComponent } from './pages/key-shareviewall/key-shareviewall.component';
 import { KeySharepostComponent } from './pages/key-sharepost/key-sharepost.component';
 import { MatCardModule } from '@angular/material/card';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { KeyDecryptSharedComponent } from './pages/key-decrypt-shared/key-decrypt-shared.component';
+
+
 
 
 
@@ -22,7 +26,8 @@ import { MatButtonModule } from '@angular/material/button';
     KeyViewallComponent,
     KeyViewdetailComponent,
     KeyShareviewallComponent,
-    KeySharepostComponent
+    KeySharepostComponent,
+    KeyDecryptSharedComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +38,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatInputModule,
     ],
 })
 export class KeymanagerModule {}

@@ -5,9 +5,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const API_URL = environment.urlApi
-const KEY_GETALLPOST = '/key_storage'
+const KEY_GETALLPOST = '/key_storage/'
 const KEY_EDIT = '/key_detail/'
 const KEY_SHARE = '/share_email/'
+const KEY_REVEAL = 'decrypted/'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -31,20 +32,25 @@ export class KeyService {
   }
 
   editKey(id: number, form: KeyI): Observable<KeyI> {
-    const url = `${API_URL}${KEY_EDIT}${id}`;
+    const url = `${API_URL}${KEY_EDIT}${id}${"/"}`;
     return this.http.patch<KeyI>(url, form, httpOptions);
   }
   getKey(id: string | null): Observable<any> {
-    const url = `${API_URL}${KEY_EDIT}${id}`;
+    const url = `${API_URL}${KEY_EDIT}${id}${"/"}`;
     return this.http.get<KeyI>(url, httpOptions);
   }
   deleteKey(id: string | null): Observable<any> {
-    const url = `${API_URL}${KEY_EDIT}${id}`;
+    const url = `${API_URL}${KEY_EDIT}${id}${"/"}`;
     return this.http.delete(url, httpOptions);
   }
 
   shareKey(id: string | null, form: SharedPOSTI): Observable<any> {
-    const url = `${API_URL}${KEY_SHARE}${id}`;
+    const url = `${API_URL}${KEY_SHARE}${id}${"/"}`;
     return this.http.post(url, form, httpOptions);
+  }
+
+  revealKey(id: string | null, email_id: string | null): Observable<any> {
+    const url = `${API_URL}${KEY_EDIT}${KEY_REVEAL}${id}${"/email_id/"}${email_id}${"/"}`;
+    return this.http.get(url, httpOptions);
   }
 }

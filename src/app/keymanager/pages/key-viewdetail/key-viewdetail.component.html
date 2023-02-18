@@ -21,17 +21,17 @@
     </mat-card>
     <mat-divider></mat-divider>
     <mat-card class="mat-cards">
+        
         <mat-card-content>
             <table mat-table [dataSource]="shared">
                 
-                <ng-container matColumnDef="email">
-                    <th mat-header-cell *matHeaderCellDef> Emails compartidos </th>
-                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                <ng-container matColumnDef={{col.key}} *ngFor="let col of columnsSchemaEstudio">
+                    <th mat-header-cell *matHeaderCellDef> {{col.label}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element[col.key]}} </td>
                 </ng-container>
     
-    
-                <tr mat-header-row *matHeaderRowDef="displayedColumnsEmail"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumnsEmail;"></tr>
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsEstudio"></tr>
+                <tr mat-row *matRowDef="let element; columns: displayedColumnsEstudio;"></tr>
             </table>
         </mat-card-content>
     </mat-card>
